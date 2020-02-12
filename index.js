@@ -15,6 +15,10 @@ export default class ValidationComponent extends Component {
       this.errors = [];
       // Retrieve props
       this.deviceLocale = props.deviceLocale || 'en'; // ex: en, fr
+      if(props.rules){
+        defaultRules["custom"]=props.rules.number;
+
+      }
       this.rules = props.rules || defaultRules; // rules for Validation
       this.messages = props.messages || defaultMessages;
       this.state = { error: false };
