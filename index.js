@@ -19,7 +19,6 @@ export default class ValidationComponent extends Component {
         defaultRules["custom"]=props.rules.number;
 
       }
-      this.rules = props.rules || defaultRules; // rules for Validation
       this.messages = props.messages || defaultMessages;
       this.state = { error: false };
   }
