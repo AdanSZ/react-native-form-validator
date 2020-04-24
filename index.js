@@ -58,6 +58,9 @@ export default class ValidationComponent extends Component {
     if(this.props.rules){
       this.rules["custom"] = this.props.rules.number;
     }
+    else{
+      self.rules["custom"]="/.*/";
+    }
     for (const key of Object.keys(rules)) {
       const isRuleFn = (typeof this.rules[key] == "function");
       const isRegExp = (this.rules[key] instanceof RegExp);
