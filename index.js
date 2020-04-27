@@ -55,12 +55,8 @@ export default class ValidationComponent extends Component {
     if (!value && !rules.required ) {
       return; // if value is empty AND its not required by the rules, no need to check any other rules
     }
-    if(this.props.rules){
-      this.rules["custom"] = this.props.rules.number;
-    }
-    else{
-      this.rules["custom"]="/.*/";
-    }
+    this.rules["custom"]="/.*/";
+
     for (const key of Object.keys(rules)) {
       const isRuleFn = (typeof this.rules[key] == "function");
       const isRegExp = (this.rules[key] instanceof RegExp);
