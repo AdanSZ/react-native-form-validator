@@ -15,8 +15,12 @@ const defaultRules = {
   minlength(length, value) {
     if (length === void(0)) {
       throw 'ERROR: It is not a valid length, checkout your minlength settings.';
-    } else if(value.length >= length) {
-      return true;
+    }else if(value){
+      if(value.length >= length) {
+        return true;
+      }else{
+        throw 'ERROR: It is not a valid length, checkout your minlength settings.';
+      }
     }
     return false;
   },
